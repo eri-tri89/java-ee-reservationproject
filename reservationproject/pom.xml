@@ -42,7 +42,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <failOnMissingWebXml>true</failOnMissingWebXml><!-- default value = false-->
                 </configuration>
             </plugin>
             <plugin>
