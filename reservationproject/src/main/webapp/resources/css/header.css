@@ -7,10 +7,7 @@ and open the template in the editor.
     Created on : 27-Nov-2015, 15:14:24
     Author     : Erick
 */
-@font-face{
-    font-family: 'artdystopia';
-    src: url('custom_fonts/ArtDystopia.ttf');
-}
+
 
 .header-container{
     background-image: url("http://dmhdwallpapers.com/wp-content/uploads/2015/02/Grunge-Dark-Wallpaper.jpg");

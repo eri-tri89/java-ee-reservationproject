@@ -19,7 +19,7 @@ h1{
     color:#FFFFFF;
     letter-spacing:6pt;
     word-spacing:9pt;
-    font-size:32px;
+    font-size:15px;
     text-align:center;    
     line-height:2;
 }
@@ -55,15 +55,10 @@ span{
     text-align:center;    
     line-height:2;
 }
-table.footer-table1{
-    left:0;
-    border-spacing: 100px 0px;
-    height: 100%;
-    width: 100%;
-}
 .icons-container{
+    height:100px;
+    float:right;
     visibility: hidden;
-    padding-top:0;
     background-image: url("http://stockfresh.com/files/t/tiero/m/93/435218_stock-photo-bloody-background.jpg");
     border-radius: 0px 0px 0px 0px;
     -moz-border-radius: 0px 0px 0px 0px;
@@ -74,10 +69,12 @@ table.footer-table1{
     box-shadow: inset 0px 38px 77px 43px rgba(0,0,0,1);
 }
 .icon{
-    width:48px;
-    height:48px;
-    padding-top:25px;
-    -webkit-filter: contrast(300%); 
+    width:30px;
+    height:30px;
+    padding-bottom:15px;
+    -webkit-filter: contrast(300%);
+    -webkit-filter: invert(1);
+   filter: invert(1);
 }
 img.self-portrait-img{
     width:75px;
@@ -92,15 +89,12 @@ img.self-portrait-img{
     width: 18em;
     font-weight:bold;
     color:white;
-    letter-spacing:-1pt;
     word-spacing:1pt;
     font-size:17px;
     text-align:center;
     text-shadow:3px 2px 1px rgba(194,4,4,1);
     font-weight:bold;
-    color:#FFFFFF;
     letter-spacing:3pt;
-    word-spacing:1pt;font-size:17px;
     text-align:center;
     font-family:'terror', Fallback, sans-serif;
     line-height:1;

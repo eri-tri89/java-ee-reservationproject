@@ -10,6 +10,6 @@
         <td><a href="${pageContext.request.contextPath}/index.jsp" class="btnMenu">HOME</a></td>
     </tr>
     <tr>
-        <td><a href="${pageContext.request.contextPath}/info/rooms.jsp" class="btnMenu">REHEARSAL ROOMS</a></td>
+        <td><a href="${pageContext.request.contextPath}/info/rooms.jsp" class="btnMenu">ROOMS</a></td>
     </tr>
 </table>

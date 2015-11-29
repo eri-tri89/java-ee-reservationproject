@@ -5,41 +5,28 @@
 --%>
 <!--Elements inside Footer div-->
 <div>
-    <table class="footer-table1" align="center">
-        <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td>
-                            <div class="text-container">
-                                <h1 id="foot-h2">Site designed and created by Erik Perez<span>&#169;</span> </h1>
-                            </div>
-                        </td>
-                        <td>
-                            <img src="${pageContext.request.contextPath}/images/self-portrait.jpg" alt="self portrait" class="self-portrait-img">
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td class="footer-td" >
-                <div class="icons-container" id="icons-container" align="center" onmouseout="showBlank();">
-                    <p id="mail">Contact me</p>
-                    <a href="https://www.facebook.com/erik.j.triana" target="_blank">
-                        <img src="${pageContext.request.contextPath}/images/icons/fb_icon.png" alt="facebook icon" class="icon" onmouseover="showFB();"/>
-                    </a>
-                    <a href="https://twitter.com/eritri89" target="_blank">
-                        <img src="${pageContext.request.contextPath}/images/icons/twitter_icon.png" alt="twitter icon" class="icon" onmouseover="showTwitter();"/>
-                    </a>    
-                    <a href="https://se.linkedin.com/in/erik-perez-b91ba3a4" target="_blank">
-                        <img src="${pageContext.request.contextPath}/images/icons/linkedin_icon.png" alt="linkedin icon" class="icon" onmouseover="showLinkedIn();"/>
-                    </a>
-                    <img src="${pageContext.request.contextPath}/images/icons/gmail_icon.png" alt="gmail icon" class="icon" id="gmail-icon" onmouseover="showGmail();"/>
-                    <img src="${pageContext.request.contextPath}/images/icons/outlook_icon.png" alt="outlook icon" class="icon" id="outlook-icon" onmouseover="showOutlookMail();"/>
-                    
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="text-container">
+        <table>
+            <tr>
+                <td> <h1 id="foot-h2">Site designed and created by Erik Perez<span>&#169;</span> </h1></td>
+                <td><img src="${pageContext.request.contextPath}/images/self-portrait.jpg" alt="self portrait" class="self-portrait-img" align="center"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="icons-container" id="icons-container" align="center" onmouseout="showBlank();">
+        <p id="mail">Contact me</p>
+        <a href="https://www.facebook.com/erik.j.triana" target="_blank">
+            <img src="${pageContext.request.contextPath}/images/icons/fb_icon.png" alt="facebook icon" class="icon" onmouseover="showFB();"/>
+        </a>
+        <a href="https://twitter.com/eritri89" target="_blank">
+            <img src="${pageContext.request.contextPath}/images/icons/twitter_icon.png" alt="twitter icon" class="icon" onmouseover="showTwitter();"/>
+        </a>    
+        <a href="https://se.linkedin.com/in/erik-perez-b91ba3a4" target="_blank">
+            <img src="${pageContext.request.contextPath}/images/icons/linkedin_icon.png" alt="linkedin icon" class="icon" onmouseover="showLinkedIn();"/>
+        </a>
+        <img src="${pageContext.request.contextPath}/images/icons/gmail_icon.png" alt="gmail icon" class="icon" id="gmail-icon" onmouseover="showGmail();"/>
+        <img src="${pageContext.request.contextPath}/images/icons/outlook_icon.png" alt="outlook icon" class="icon" id="outlook-icon" onmouseover="showOutlookMail();"/>
+    </div>
 </div>
 
 

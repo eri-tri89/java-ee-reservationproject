@@ -21,7 +21,11 @@ and open the template in the editor.
 }
 @font-face{
     font-family: 'Guttural';
-    src: url('custom_fonts/Gutural_by_Meztone.ttf');
+    src: url('custom_fonts/Guttural_by_Meztone.ttf');
+}
+@font-face{
+    font-family: 'artdystopia';
+    src: url('custom_fonts/ArtDystopia.ttf');
 }
 
 html, body, .central-container { 
