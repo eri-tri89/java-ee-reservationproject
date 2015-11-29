@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-Nov-2015, 15:14:24
+    Author     : Erick
+*/
+@font-face{
+    font-family: 'artdystopia';
+    src: url('custom_fonts/ArtDystopia.ttf');
+}
+
+.header-container{
+    background-image: url("http://dmhdwallpapers.com/wp-content/uploads/2015/02/Grunge-Dark-Wallpaper.jpg");
+    -webkit-box-shadow: inset -14px -23px 159px 43px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset -14px -23px 159px 43px rgba(0,0,0,0.6);
+    box-shadow: inset -14px -23px 159px 43px rgba(0,0,0,0.6);
+}
+
+.header-container h1{
+    font-family: "artdystopia", Fallback, sans-serif;
+    text-shadow:1px 1px 1px rgba(255,0,0,1);
+    font-weight:normal;
+    color:#000000;
+    letter-spacing:2pt;
+    word-spacing:1pt;
+    font-size:32px;
+    text-align:center;
+    line-height:1;
+
+}
+.title-container{
+    background-color: dimgrey;
+    background-image: url('http://www.featurepics.com/FI/Thumb300/20081009/Very-Old-Painted-Concrete-Wall-924951.jpg');
+    align-content: center;
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;    
+    -webkit-box-shadow: inset 0px -4px 93px 10px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px -4px 93px 10px rgba(0,0,0,1);
+    box-shadow: inset 0px -4px 93px 10px rgba(0,0,0,1);
+    border: 1px solid #000000;
+    width: 50%;
+}

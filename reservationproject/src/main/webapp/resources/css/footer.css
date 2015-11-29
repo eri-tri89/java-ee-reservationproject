@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-Nov-2015, 15:14:35
+    Author     : Erick
+*/
+
+.text-container{
+    float:left;    
+} 
+h1{
+    text-align: center;
+    font-family:"Ghastly_Panic", Fallback, sans-serif;
+    text-shadow:3px 2px 0 rgba(143,3,3,1);
+    font-weight:normal;
+    color:#FFFFFF;
+    letter-spacing:6pt;
+    word-spacing:9pt;
+    font-size:32px;
+    text-align:center;    
+    line-height:2;
+}
+b{
+    font-weight:bold;
+    color:black;
+    background-color:black;
+    border: 1px solid #000000;
+    letter-spacing:-1pt;
+    word-spacing:1pt;
+    font-size:5%;
+    text-align:center;
+    font-family:'Guttural', Fallback, sans-serif;
+    text-shadow:3px 2px 1px rgba(0,0,0,1);
+    font-weight:bold;
+    color:#000000;
+    letter-spacing:2pt;
+    word-spacing:1pt;
+    text-align:center;
+    line-height:1;
+    margin:0px;
+    padding:0px;
+}
+span{
+    text-align: center;
+    font-family:arial, helvetica, sans-serif;
+    text-shadow:3px 2px 0 rgba(143,3,3,1);
+    font-weight:normal;
+    color:#FFFFFF;
+    letter-spacing:6pt;
+    word-spacing:9pt;
+    font-size:20px;
+    text-align:center;    
+    line-height:2;
+}
+table.footer-table1{
+    left:0;
+    border-spacing: 100px 0px;
+    height: 100%;
+    width: 100%;
+}
+.icons-container{
+    visibility: hidden;
+    padding-top:0;
+    background-image: url("http://stockfresh.com/files/t/tiero/m/93/435218_stock-photo-bloody-background.jpg");
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: inset 0px 38px 77px 43px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 38px 77px 43px rgba(0,0,0,1);
+    box-shadow: inset 0px 38px 77px 43px rgba(0,0,0,1);
+}
+.icon{
+    width:48px;
+    height:48px;
+    padding-top:25px;
+    -webkit-filter: contrast(300%); 
+}
+img.self-portrait-img{
+    width:75px;
+    height:75px;
+    display:block;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 2px solid #000000;
+}
+#mail{
+    width: 18em;
+    font-weight:bold;
+    color:white;
+    letter-spacing:-1pt;
+    word-spacing:1pt;
+    font-size:17px;
+    text-align:center;
+    text-shadow:3px 2px 1px rgba(194,4,4,1);
+    font-weight:bold;
+    color:#FFFFFF;
+    letter-spacing:3pt;
+    word-spacing:1pt;font-size:17px;
+    text-align:center;
+    font-family:'terror', Fallback, sans-serif;
+    line-height:1;
+    margin:0px;
+    padding:0px;
+}
