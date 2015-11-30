@@ -29,15 +29,6 @@
                     <td><input type="email" name="email" class="input"/></td>
                     <td><p id="warning3"></p></td>
                 </tr>
-            </table>
-        </div>
-        <br/>
-        <div>
-            
-        </div>
-        <br/><br/><br/>
-        <div id="bookingForm">
-            <table>
                 <tr>
                     <td><p>Times You want to book </p></td>
                     <td>
@@ -50,28 +41,52 @@
                     <td><p id="warning4"></p></td>
                 </tr>
             </table>
-            <!--create max 3 date/time form with js-->
             <table>
                 <tr>
                     <td><p>Date </p></td>
-                    <td><input type="date" name="date"/></td>
+                    <td><input type="date" name="date1"/></td>
                     <td><p id="warning4"></p></td>
                 </tr>
                 <tr>
-                    <td><p>From </p></td>
-                    <td><input type="time" name="from"/></td>
+                    <td><p>From - to </p></td>
+                    <td>
+                         <select name="timelapse1">
+                            <option value="10:00-13:00" default>From 10:00 - To 13:00</option>
+                            <option value="14:00-17:00">From 14:00 - To 17:00</option>
+                            <option value="18:00-21:00">From 18:00 - To 21:00</option>
+                        </select>
+                    </td>
                     <td><p id="warning5"></p></td>
                 </tr>
                 <tr>
-                    <td><p>To </p></td>
-                    <td><input type="time" name="to"/></td>
-                    <td><p id="warning6"></p></td>
+                    <td><p>Date </p></td>
+                    <td><input type="date" name="date2"/></td>
+                </tr>
+                <tr>
+                    <td><p>From - to </p></td>
+                    <td>
+                         <select name="timelapse2">
+                            <option value="10:00-13:00" default>From 10:00 - To 13:00</option>
+                            <option value="14:00-17:00">From 14:00 - To 17:00</option>
+                            <option value="18:00-21:00">From 18:00 - To 21:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Date </p></td>
+                    <td><input type="date" name="date3"/></td>
+                </tr>
+                <tr>
+                    <td><p>From - to </p></td>
+                    <td>
+                         <select name="timelapse3">
+                            <option value="10:00-13:00" default>From 10:00 - To 13:00</option>
+                            <option value="14:00-17:00">From 14:00 - To 17:00</option>
+                            <option value="18:00-21:00">From 18:00 - To 21:00</option>
+                        </select>
+                    </td>
                 </tr>
             </table>
-            
-            
-        </div>
-
-
+        </div>  
     </jsp:body>
 </t:main>

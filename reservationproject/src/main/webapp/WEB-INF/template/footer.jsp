@@ -5,7 +5,7 @@
 --%>
 <!--Elements inside Footer div-->
 <div>
-    <div class="text-container">
+    <div class="text-container" onmouseout="showBlank();">
         <table>
             <tr>
                 <td> <h1 id="foot-h2">Site designed and created by Erik Perez<span>&#169;</span> </h1></td>
@@ -13,7 +13,7 @@
             </tr>
         </table>
     </div>
-    <div class="icons-container" id="icons-container" align="center" onmouseout="showBlank();">
+    <div class="icons-container" id="icons-container" align="center"><!-- onmouseout="showBlank();"-->
         <p id="mail">Contact me</p>
         <a href="https://www.facebook.com/erik.j.triana" target="_blank">
             <img src="${pageContext.request.contextPath}/images/icons/fb_icon.png" alt="facebook icon" class="icon" onmouseover="showFB();"/>

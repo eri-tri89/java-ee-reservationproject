@@ -27,16 +27,8 @@
         <div class="header-container" align="center">
             <jsp:include page="/WEB-INF/template/header.jsp"/>
         </div>
-        <div class="central-container">
-
-            <div class="menu-container">
-                <jsp:include page="/WEB-INF/template/menu.jsp"/>
-            </div>
-
-            <div class="body-container" align="center">
-                <jsp:doBody/>
-            </div>
-
+        <div class="central-container" align="center">
+            <jsp:doBody/>
         </div>
             <div class="footer-container" onmouseover="showFooter();" onmouseout="hideFooter();">
             <jsp:include page="/WEB-INF/template/footer.jsp"/>

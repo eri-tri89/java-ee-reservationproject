@@ -10,96 +10,9 @@ and open the template in the editor.
 
 /*Items inside central-container*/
 
-
-
-/********************************************************* Items inside menu-container *********************************************************/
-.menu-container{
-    background-color:gray;
-    background-image: url("/reservationproject/images/Suffocation_guitar.jpg");
-    width: 20%;
-    height: calc(100% - 12em);
-    position:fixed;
-    left:0;
-    top: 5em;
-    z-index: -1;    
-}
-.menu-container table{
-    background-image: url("http://www.lakestatecrossfit.com/wp-content/uploads/2013/07/metal-twitter-background.jpg");
-    text-align: center;
-    background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=e6e6e600&noise=000000&density=85&opacity=47");
-    position: inherit;
-    height: inherit/*calc(100% - 9.2em)*/;
-    width: inherit;
-    left: 0;
-    top:inherit;
-    border-collapse:inherit;
-    border-color: black;
-    -webkit-box-shadow: inset 0px -4px 93px 64px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px -4px 93px 64px rgba(0,0,0,1);
-    box-shadow: inset 0px -4px 93px 64px rgba(0,0,0,1);
-}
-a{
-    text-shadow:2px 3px 8px rgba(0,0,0,0.6);
-    font-weight:bold;
-    font-style:oblique;
-    font-variant:small-caps;
-    color:#FFFFFF;
-    letter-spacing:4pt;
-    word-spacing:-11pt;
-    font-size:200%;
-    text-align:right;
-    font-family:"TheGrindeR-Regular", Fallback, sans-serif;
-    line-height:3;
-}
-.btnMenu {
-    background: #cccccc;
-    background-image: -webkit-linear-gradient(top, #cccccc, #000000);
-    background-image: -moz-linear-gradient(top, #cccccc, #000000);
-    background-image: -ms-linear-gradient(top, #cccccc, #000000);
-    background-image: -o-linear-gradient(top, #cccccc, #000000);
-    background-image: linear-gradient(to bottom, #cccccc, #000000);
-    -webkit-border-radius: 60px;
-    -moz-border-radius: 60px;
-    border-radius: 60px;
-    text-shadow: 0px 7px 7px #666666;
-    -webkit-box-shadow: -10px 8px 21px #000000;
-    -moz-box-shadow: -10px 8px 21px #000000;
-    box-shadow: -10px 8px 21px #000000;
-    color: #ffffff;
-    font-size: 33px;
-    word-spacing:3pt;
-    padding: 0px 50px 0px 50px;
-    border: dotted #000000 0px;
-    text-decoration: none;
-}
-
-.btnMenu:hover {
-    background: #000000;
-    background-image: -webkit-linear-gradient(top, #000000, #8a8a8a);
-    background-image: -moz-linear-gradient(top, #000000, #8a8a8a);
-    background-image: -ms-linear-gradient(top, #000000, #8a8a8a);
-    background-image: -o-linear-gradient(top, #000000, #8a8a8a);
-    background-image: linear-gradient(to bottom, #000000, #8a8a8a);
-    text-decoration: none;
-}
-
 /********************************************************* Items inside body-container *********************************************************/
 
-.body-container{
-    overflow-y: scroll;
-    background-color:gray;
-    background-image: url("http://www.pageresource.com/wallpapers/wallpaper/jagodunya-texture-wall-cracks-creative-background.jpg");
-    left: 20%;
-    width: /*calc(100% - 9.2em)*/80%;
-    top: 5em;
-    height: calc(100% - 10em);
-    position:fixed; 
-    float: left;
-    z-index: -2;
-    -webkit-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
-    box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
-}p{
+p{
     text-shadow:-3px 3px 2px rgba(173,4,4,1);
     color:#FFFFFF;
     letter-spacing:0pt;
@@ -142,7 +55,7 @@ a{
     text-decoration: none;
 }
 h2{
-    font-family: "TheGrindeR-Regular", Fallback, sans-serif;
+    font-family: "Ghastly_Panic", Fallback, sans-serif;
     text-align: center;
     text-shadow:3px 2px 0 rgba(143,3,3,1);
     font-weight:normal;
@@ -154,7 +67,7 @@ h2{
     line-height:2;
 }
 h3{
-    font-family: "Guttural", Fallback, sans-serif;
+    font-family: "ArtDystopia", Fallback, sans-serif;
     text-align: center;
     text-shadow:3px 2px 0 rgba(143,3,3,1);
     font-weight:normal;
@@ -272,11 +185,11 @@ div.datagrid-container{
 }
 
 .img_room{
-    width: 50%;
+    width: 20%;
     background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=4ea6caff&noise=626262&density=100&opacity=100");
-    border-radius: 157px 157px 0px 0px;
-    -moz-border-radius: 157px 157px 0px 0px;
-    -webkit-border-radius: 157px 157px 0px 0px;
+    border-radius: 100px 100px 0px 0px;
+    -moz-border-radius: 100px 100px 0px 0px;
+    -webkit-border-radius: 100px 100px 0px 0px;
     border: 5px solid #000000;
     -webkit-box-shadow: 3px 9px 119px 77px rgba(0,0,0,1);
     -moz-box-shadow: 3px 9px 119px 77px rgba(0,0,0,1);

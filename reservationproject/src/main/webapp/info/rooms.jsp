@@ -10,10 +10,10 @@
     <jsp:body>
         <h2>Rehearsal Rooms</h2>
         <p>Something about the rooms, the prices and the quality of the rooms</p>
-        <br/><br/><br/>
-        <div>
-            <h3>Rehearsal Room 1</h3>
+        <br/><br/><br/>        
+        <div>           
             <div>
+                <h3>Rehearsal Room 1</h3>
                 <img src="${pageContext.request.contextPath}/images/rooms/rehearsal-room1.jpg" alt="rehearsal room 1" class="img_room"/>
             </div>
             <div>
@@ -50,9 +50,9 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h3>Rehearsal Room 2</h3>
+        <div>            
             <div>
+                <h3>Rehearsal Room 2</h3>
                 <img src="${pageContext.request.contextPath}/images/rooms/rehearsal-room2.jpg" alt="rehearsal room 2" class="img_room"/>
             </div>
             <div>
@@ -89,9 +89,9 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h3>Rehearsal Room 3</h3>
+        <div>            
             <div>
+                <h3>Rehearsal Room 3</h3>
                 <img src="${pageContext.request.contextPath}/images/rooms/rehearsal-room3.jpg" alt="rehearsal room 3" class="img_room"/>
             </div>
             <div>

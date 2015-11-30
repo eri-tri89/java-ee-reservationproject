@@ -12,25 +12,14 @@ and open the template in the editor.
     src: url('custom_fonts/Ghastly_Panic.ttf');
 }
 @font-face{
-    font-family: 'terror';
-    src: url('custom_fonts/terror_pro.ttf');
-}
-@font-face{
-    font-family: 'TheGrindeR-Regular';
-    src: url('custom_fonts/TheGrindeR-Regular.ttf');
-}
-@font-face{
-    font-family: 'Guttural';
-    src: url('custom_fonts/Guttural_by_Meztone.ttf');
-}
-@font-face{
     font-family: 'artdystopia';
     src: url('custom_fonts/ArtDystopia.ttf');
 }
 
 html, body, .central-container { 
-    height: auto; 
-    min-height: 100%;
+    /*height: auto; 
+    min-height: 100%;*/
+    flex-direction: column;
     background-color: black;
 }
 .header-container{
@@ -43,8 +32,18 @@ html, body, .central-container {
     top:0;
 }
 .central-container{
-    height: 100%;
-    width: 100%;
+    overflow-y: scroll;
+    overflow-x:scroll;
+    background-image: url("http://www.pageresource.com/wallpapers/wallpaper/jagodunya-texture-wall-cracks-creative-background.jpg");
+    width:100%;    
+    height: 79%;
+    position:fixed;
+    top: 11%;
+    left: 0;
+    z-index: -2;
+    -webkit-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
+    box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
 }
 .footer-container{
     background-color:gray;

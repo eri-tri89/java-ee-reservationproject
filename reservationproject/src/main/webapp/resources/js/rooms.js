@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// do function to not to be able to choose two equal events in the booking
+
+
+
 function showTable(divId, buttonId) {
     if (document.getElementById(buttonId).innerHTML === "Show times already taken in this room") {
-        document.getElementById(buttonId).innerHTML = "Hide table"
+        document.getElementById(buttonId).innerHTML = "Hide table";
         document.getElementById(divId).style.visibility = "visible";
     } else {
         document.getElementById(buttonId).innerHTML = "Show times already taken in this room";
