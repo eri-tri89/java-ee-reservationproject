@@ -195,3 +195,53 @@ div.datagrid-container{
     -moz-box-shadow: 3px 9px 119px 77px rgba(0,0,0,1);
     box-shadow: 3px 9px 119px 77px rgba(0,0,0,1);
 }
+
+/***************************************** form ******************************************/
+
+.form-div table{
+    width: 50%;
+}
+.p-form{
+    text-align: left;
+}
+#date1p,#date2p,#date3p,#datePicker1,#datePicker2,#datePicker3,#select1,#select2,#select3{
+    visibility: hidden;
+}
+#warning1,#warning2,#warning3,#warning4{
+    visibility: hidden;
+    font-weight:normal;
+    font-variant:small-caps;
+    color:#000000;
+    background-color:red;
+    /*border-radius: 120px 120px 120px 0px;
+    -moz-border-radius: 120px 120px 120px 0px;
+    -webkit-border-radius: 120px 120px 120px 0px;*/
+    border: 2px solid #000000;
+    letter-spacing:1pt;
+    word-spacing:2pt;
+    font-size:12px;
+    text-align:left;
+    font-family:impact, sans-serif;
+    line-height:1;
+}
+.input{
+    color: black;
+    font-weight:bold;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #000000;
+    -webkit-box-shadow: inset -19px -20px 27px -17px rgba(0,0,0,1);
+    -moz-box-shadow: inset -19px -20px 27px -17px rgba(0,0,0,1);
+    box-shadow: inset -19px -20px 27px -17px rgba(0,0,0,1);
+   font-weight:normal;
+   font-variant:small-caps;
+   color:#000000;
+   border: 1px solid; 
+   letter-spacing:1pt;
+   word-spacing:3pt;
+   font-size:15px;
+   text-align:left;
+   font-family:courier new, courier, monospace;
+   line-height:1;;
+}
