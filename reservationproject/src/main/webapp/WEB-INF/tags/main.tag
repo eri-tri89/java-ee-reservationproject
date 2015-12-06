@@ -8,7 +8,7 @@
 
 <%-- The list of normal or fragment attributes can be specified here: --%>
 <%@attribute name="content" fragment="true" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%-- any content can be specified here e.g.: --%>
 <!DOCTYPE html>
 <html>

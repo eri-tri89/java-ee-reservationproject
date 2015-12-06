@@ -6,8 +6,8 @@
 <!--Elements inside Header div-->
 <div class="title-container" align="center">    
     <p id="title">El Borracho Studio</p>
-<a href="${pageContext.request.contextPath}/index.jsp" class="btnMenu">Home</a>
-<a href="${pageContext.request.contextPath}/info/rooms.jsp" class="btnMenu">Rooms</a>    
+<a href="${pageContext.request.contextPath}/index.jsp" class="btnMenu" id="homebtn">Home</a>
+<a href="${pageContext.request.contextPath}/RoomSelecter" class="btnMenu" id="menubtn">Rooms</a>    
 </div>
 
 

@@ -4,10 +4,12 @@
     Author     : Erick
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:main>
     <jsp:body>
+        <p>${notAllowedMessage}</p>
         <h2>Rehearsal Rooms</h2>
         <p>Something about the rooms, the prices and the quality of the rooms</p>
         <br/><br/><br/>        
@@ -22,30 +24,30 @@
                     <!-- show table from room 1 here-->
                     <div class="datagrid"><table>
                             <thead>
-                                <tr><th>Date</th><th>Band</th><th>From</th><th>To</th></tr>
+                                <tr><th>Date</th><th>From</th><th>To</th></tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>  
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr> 
+                            <tbody>                                
+                                <c:choose>
+                                    <c:when test="${not empty roomlist1}">
+                                        <c:forEach var="booking" items="${roomlist1}">
+                                            <tr>
+                                                <td>${booking.bookingDate}</td><td>${booking.startTime}</td><td>${booking.endTime}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <tr>
+                                            <td>None</td><td>None</td><td>None</td>
+                                        </tr>
+                                    </c:otherwise>
+                                </c:choose>
                             </tbody>
                         </table>                                              
                     </div>
-                    <form action="form.jsp" method="get">
+                    <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="1"/>
-                        <input class="table-button" type="submit" value="Book times here"/>
+                        <jsp:include page="form.jsp"/>
+                        <input class="table-button" type="submit" value="Confirm booking"/>
                     </form> 
                 </div>
             </div>
@@ -61,30 +63,30 @@
                     <!-- show table from room 2 here-->
                     <div class="datagrid"><table>
                             <thead>
-                                <tr><th>Date</th><th>Band</th><th>From</th><th>To</th></tr>
+                                <tr><th>Date</th><th>From</th><th>To</th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
+                               <c:choose>
+                                    <c:when test="${not empty roomlist2}">
+                                        <c:forEach var="booking" items="${roomlist2}">
+                                            <tr>
+                                                <td>${booking.bookingDate}</td><td>${booking.startTime}</td><td>${booking.endTime}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <tr>
+                                            <td>None</td><td>None</td><td>None</td>
+                                        </tr>
+                                    </c:otherwise>
+                                </c:choose>
                             </tbody>
                         </table>
                     </div>
-                    <form action="form.jsp" method="get">
+                    <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="2"/>
-                        <input class="table-button" type="submit" value="Book times here"/>
+                        <jsp:include page="form.jsp"/>
+                        <input class="table-button" type="submit" value="Confirm booking"/>
                     </form>
                 </div>
             </div>
@@ -100,30 +102,30 @@
                     <!-- show table from room 3 here-->
                     <div class="datagrid"><table>
                             <thead>
-                                <tr><th>Date</th><th>Band</th><th>From</th><th>To</th></tr>
+                                <tr><th>Date</th><th>From</th><th>To</th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
-                                <tr>
-                                    <td>data</td><td>data</td><td>data</td><td>data</td>
-                                </tr>
+                                <c:choose>
+                                    <c:when test="${not empty roomlist3}">
+                                        <c:forEach var="booking" items="${roomlist3}">
+                                            <tr>
+                                                <td>${booking.bookingDate}</td><td>${booking.startTime}</td><td>${booking.endTime}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <tr>
+                                            <td>None</td><td>None</td><td>None</td>
+                                        </tr>
+                                    </c:otherwise>
+                                </c:choose>
                             </tbody>
                         </table>
                     </div>
-                    <form action="form.jsp" method="get">
+                    <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="3"/>
-                        <input class="table-button" type="submit" value="Book times here"/>
+                        <jsp:include page="form.jsp"/>
+                        <input class="table-button" type="submit" value="Confirm booking"/>
                     </form>
                 </div>
             </div>

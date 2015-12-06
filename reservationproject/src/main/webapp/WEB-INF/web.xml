@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>MainServlet</servlet-name>
-        <servlet-class>se.erikperez.reservationproject.servlets.MainServlet</servlet-class>
+        <servlet-name>RoomSelector</servlet-name>
+        <servlet-class>se.erikperez.reservationproject.servlets.RoomSelector</servlet-class>
     </servlet>
-    <error-page>        
+    <servlet>
+        <servlet-name>FormController</servlet-name>
+        <servlet-class>se.erikperez.reservationproject.servlets.FormController</servlet-class>
+    </servlet>
+    <listener>
+        <listener-class>se.erikperez.reservationproject.listeners.ContextListener</listener-class>
+    </listener>
+    <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/errorPages/404.jsp</location>
     </error-page>
     <error-page>
-	<exception-type>java.lang.Throwable</exception-type>
-	<location>/WEB-INF/errorPages/failed.jsp</location>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/WEB-INF/errorPages/failed.jsp</location>
     </error-page>
+    <servlet>
+        <servlet-name>RoomSelecter</servlet-name>
+        <servlet-class>se.erikperez.reservationproject.servlets.RoomSelecter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RoomSelecter</servlet-name>
+        <url-pattern>/RoomSelecter</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

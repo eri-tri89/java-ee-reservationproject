@@ -22,7 +22,6 @@ p{
     font-family:arial, helvetica, sans-serif;
     line-height:0;
     margin:0px;
-    padding:0px;
 }
 .showhideBtn{
     width: 50%;
@@ -203,26 +202,6 @@ div.datagrid-container{
 }
 .p-form{
     text-align: left;
-}
-#date1p,#date2p,#date3p,#datePicker1,#datePicker2,#datePicker3,#select1,#select2,#select3{
-    visibility: hidden;
-}
-#warning1,#warning2,#warning3,#warning4{
-    visibility: hidden;
-    font-weight:normal;
-    font-variant:small-caps;
-    color:#000000;
-    background-color:red;
-    /*border-radius: 120px 120px 120px 0px;
-    -moz-border-radius: 120px 120px 120px 0px;
-    -webkit-border-radius: 120px 120px 120px 0px;*/
-    border: 2px solid #000000;
-    letter-spacing:1pt;
-    word-spacing:2pt;
-    font-size:12px;
-    text-align:left;
-    font-family:impact, sans-serif;
-    line-height:1;
 }
 .input{
     color: black;
