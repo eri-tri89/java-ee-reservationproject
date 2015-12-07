@@ -15,8 +15,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import se.erikperez.reservationproject.dataManagement.DatabaseManager;
-import se.erikperez.reservationproject.dataManagement.RequestStringManager;
+import se.erikperez.reservationproject.infotier.DatabaseManager;
+import se.erikperez.reservationproject.infotier.RequestStringManager;
+import se.erikperez.reservationproject.model.Booking;
 
 /**
  *
@@ -36,6 +37,8 @@ public class FormController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        boolean succeed = true;
+
         int roomNumber = Integer.parseInt(request.getParameter("roomnumber"));
         String firstname = request.getParameter("firstname"),
                 lastname = request.getParameter("lastname"),
@@ -48,25 +51,32 @@ public class FormController extends HttpServlet {
 
         //verify request values
         RequestStringManager.manageInvalidRequest(request, response, firstname, RequestStringManager.isStringAllowed(firstname, false));
-        RequestStringManager.manageInvalidRequest(request, response, firstname, RequestStringManager.isStringAllowed(lastname, false));
-        RequestStringManager.manageInvalidRequest(request, response, firstname, RequestStringManager.isStringAllowed(email, true));
+        RequestStringManager.manageInvalidRequest(request, response, lastname, RequestStringManager.isStringAllowed(lastname, false));
+        RequestStringManager.manageInvalidRequest(request, response, email, RequestStringManager.isStringAllowed(email, true));
+
+        DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager");
+        Booking newBooking = databaseManager.addBooking(firstname, lastname, email, roomNumber, date, startTime, endTime);
+
+        if (newBooking == null)
+            succeed = false;
         
+        request.setAttribute("succeed",succeed);
         
-        try (DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager")) {
-            databaseManager.addBooking(firstname, lastname, email, roomNumber, date, startTime, endTime);
-        } catch (Exception ex) { 
-            Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
+        if (succeed) {
+            
+            request.setAttribute("roomnumber", roomNumber);
+            request.setAttribute("firstname", firstname);
+            request.setAttribute("lastname", lastname);
+            request.setAttribute("email", email);
+            request.setAttribute("date", date.toString());
+            request.setAttribute("from", startTime);
+            request.setAttribute("to", endTime);
+
+            request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
+        } else {
+            request.setAttribute("error", "Time already taken, try again!");
+            request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
         }
-
-        request.setAttribute("roomnumber", roomNumber);
-        request.setAttribute("firstname", firstname);
-        request.setAttribute("lastname", lastname);
-        request.setAttribute("email", email);
-        request.setAttribute("date", date.toString());
-        request.setAttribute("from", startTime);
-        request.setAttribute("to", endTime);
-
-        request.getRequestDispatcher("confirmation/thanks.jsp").forward(request, response);
 
     }
 

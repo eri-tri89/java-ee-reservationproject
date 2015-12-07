@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.erikperez.reservationproject.dataManagement;
+package se.erikperez.reservationproject.infotier;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -26,15 +26,18 @@ public final class RequestStringManager {
     }
     
     public static boolean isStringAllowed(String requestString, boolean email){
-        return (email)?
-                requestString.contains(ALLOWED_CHARACTERS_EMAIL):
-                requestString.contains(ALLOWED_CHARACTERS);
+        if(email){
+            if(!requestString.contains(ALLOWED_CHARACTERS_EMAIL))return false;
+        }else{
+            if(!requestString.contains(ALLOWED_CHARACTERS))return false;
+        }
+        return true;
     }
     
     public static void manageInvalidRequest(HttpServletRequest request, HttpServletResponse response, String requestString, boolean isStringAllowed) 
             throws ServletException, IOException{
-        request.setAttribute("notAllowedMessage", "Your request is not allowed, please try again");
-        RequestDispatcher requestDispatcher = (isStringAllowed)? request.getRequestDispatcher("info/rooms.jsp"):null;
+        request.setAttribute("error", "Your request is not allowed, please try again");
+        RequestDispatcher requestDispatcher = (isStringAllowed)? request.getRequestDispatcher("confirmation/result.jsp"):null;
         if(requestDispatcher != null)requestDispatcher.forward(request, response);
     }
 }

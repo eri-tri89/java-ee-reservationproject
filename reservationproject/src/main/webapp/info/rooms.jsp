@@ -9,7 +9,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:main>
     <jsp:body>
-        <p>${notAllowedMessage}</p>
+        <p style="background-color: yellow">${notAllowedMessage}</p>
         <h2>Rehearsal Rooms</h2>
         <p>Something about the rooms, the prices and the quality of the rooms</p>
         <br/><br/><br/>        

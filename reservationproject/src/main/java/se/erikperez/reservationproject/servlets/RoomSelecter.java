@@ -7,13 +7,11 @@ package se.erikperez.reservationproject.servlets;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import se.erikperez.reservationproject.dataManagement.DatabaseManager;
+import se.erikperez.reservationproject.infotier.DatabaseManager;
 import se.erikperez.reservationproject.model.Booking;
 
 /**
@@ -21,7 +19,7 @@ import se.erikperez.reservationproject.model.Booking;
  * @author Erick
  */
 public class RoomSelecter extends HttpServlet {
-
+    
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -33,25 +31,22 @@ public class RoomSelecter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         //Send lists from database to show the client the already taken times
+        DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager");
+        List<Booking> roomList1 = databaseManager.getBookingListByRoomNumber(1),
+                roomList2 = databaseManager.getBookingListByRoomNumber(2),
+                roomList3 = databaseManager.getBookingListByRoomNumber(3);
 
-        try (DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager")) {
-            List<Booking> roomList1 = databaseManager.getBookingListByRoomNumber(1),
-                    roomList2 = databaseManager.getBookingListByRoomNumber(2),
-                    roomList3 = databaseManager.getBookingListByRoomNumber(3);
-            
-            this.getServletContext().log("roomlist 1 = " + roomList1.size());
-            this.getServletContext().log("roomlist 2 = " + roomList2.size());
-            this.getServletContext().log("roomlist 3 = " + roomList3.size());
-            
-            request.setAttribute("roomlist1", roomList1);
-            request.setAttribute("roomlist2", roomList2);
-            request.setAttribute("roomlist3", roomList3);
+        this.getServletContext().log("roomlist 1 = " + roomList1.size());
+        this.getServletContext().log("roomlist 2 = " + roomList2.size());
+        this.getServletContext().log("roomlist 3 = " + roomList3.size());
 
-            request.getRequestDispatcher("info/rooms.jsp").forward(request, response);
-        } catch (Exception ex) {
-            Logger.getLogger(RoomSelecter.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        request.setAttribute("roomlist1", roomList1);
+        request.setAttribute("roomlist2", roomList2);
+        request.setAttribute("roomlist3", roomList3);
+
+        request.getRequestDispatcher("info/rooms.jsp").forward(request, response);
 
     }
 

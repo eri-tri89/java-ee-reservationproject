@@ -5,12 +5,11 @@
  */
 package se.erikperez.reservationproject.listeners;
 
-import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import se.erikperez.reservationproject.dataManagement.DatabaseManager;
-import se.erikperez.reservationproject.model.Booking;
+import se.erikperez.reservationproject.infotier.DatabaseManager;
 
 /**
  *

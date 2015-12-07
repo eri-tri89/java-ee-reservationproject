@@ -5,6 +5,7 @@
  */
 package se.erikperez.reservationproject.model;
 
+
 import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
@@ -23,11 +24,10 @@ import javax.persistence.NamedQuery;
 @NamedQueries(value ={
     @NamedQuery(name="booking.findAllbyRoom", query="SELECT b FROM Booking b WHERE b.roomNumber = :roomNumber ORDER BY b.bookingDate ASC"),
     @NamedQuery(name="booking.updateTable",query="DELETE FROM Booking b WHERE b.bookingDate < :bookingDate")
-        
+       
 })
-public class Booking implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Booking implements Serializable{
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -53,7 +53,7 @@ public class Booking implements Serializable {
     @Column
     private String endTime;
 
-    protected Booking() {
+    public Booking() {
     }
 
     public String getStartTime() {
