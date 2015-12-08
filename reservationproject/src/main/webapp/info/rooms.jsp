@@ -18,9 +18,11 @@ Boolean authorized = (Boolean)(session.getAttribute("authorized"));
 <t:main>
     <jsp:body>
         <h2>Rehearsal Rooms</h2>
-        <p>It costs 300 SEK to play in one of our rooms... but don't worry! you pay it when you finished to play with your band. </p>
-        <p>All the rooms have the best quality for your band. You lose your booking if you come 20 minutes later
-            but you don't have to pay it, just book another one</p>
+        <p>It costs 300 SEK to play in one of our rooms... but don't worry! </p>
+        <p>you pay it when you finished to play with your band. </p>
+        <p>All the rooms have the best quality for your band. You lose your </p>
+        <p>booking if you come 20 minutes later but you don't have to pay it,</p>
+        <p>just book another one</p>
         <br/><br/><br/>        
         <div>           
             <div>
