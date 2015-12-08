@@ -14,12 +14,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link href = "http://i69.fastpic.ru/big/2015/0602/77/9f219c8b2f59e710f87db462b16bbd77.png" rel="icon" type="image/png">
         <!-- css -->
         <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/main.css'>
         <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/footer.css'>
         <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/header.css'>
         <link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/central.css'>
-        
+       
         
         <title>El Borracho Studio</title>
     </head>

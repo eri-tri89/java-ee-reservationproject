@@ -16,10 +16,7 @@ and open the template in the editor.
     src: url('custom_fonts/ArtDystopia.ttf');
 }
 
-html, body, .central-container { 
-    /*height: auto; 
-    min-height: 100%;*/
-    flex-direction: column;
+html, body{ 
     background-color: black;
 }
 .header-container{
@@ -27,25 +24,29 @@ html, body, .central-container {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    height: inherit;
     position:fixed;
     left:0;
     top:0;
+    z-index: 1;
 }
 .central-container{
+    
     overflow-y: scroll;
     overflow-x:scroll;
     background-image: url("http://www.pageresource.com/wallpapers/wallpaper/jagodunya-texture-wall-cracks-creative-background.jpg");
     width:100%;    
-    height: 79%;
-    position:fixed;
-    top: 11%;
+    height: 78%;    
     left: 0;
+    position: fixed;
+    top: 12%;
     z-index: -2;
     -webkit-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
     -moz-box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
     box-shadow: inset 0px -4px 93px 44px rgba(0,0,0,1);
 }
 .footer-container{
+    z-index: 1;
     background-color:gray;
     background-image: url("http://dmhdwallpapers.com/wp-content/uploads/2015/02/Grunge-Dark-Wallpaper.jpg");
     width: 100%;

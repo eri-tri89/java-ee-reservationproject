@@ -7,16 +7,13 @@ package se.erikperez.reservationproject.servlets;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import se.erikperez.reservationproject.infotier.DatabaseManager;
-import se.erikperez.reservationproject.infotier.RequestStringManager;
+import javax.servlet.http.HttpSession;
+import se.erikperez.reservationproject.datamanagement.DatabaseManager;
 import se.erikperez.reservationproject.model.Booking;
 
 /**
@@ -43,27 +40,31 @@ public class FormController extends HttpServlet {
         String firstname = request.getParameter("firstname"),
                 lastname = request.getParameter("lastname"),
                 email = request.getParameter("email");
-        Date date = RequestStringManager.parseToSQLDate(request.getParameter("date"));
+        Date date = Date.valueOf(request.getParameter("date"));
 
         String[] moment = request.getParameter("select").split("-");
         String startTime = moment[0],
                 endTime = moment[1];
 
-        //verify request values
-        RequestStringManager.manageInvalidRequest(request, response, firstname, RequestStringManager.isStringAllowed(firstname, false));
-        RequestStringManager.manageInvalidRequest(request, response, lastname, RequestStringManager.isStringAllowed(lastname, false));
-        RequestStringManager.manageInvalidRequest(request, response, email, RequestStringManager.isStringAllowed(email, true));
-
         DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager");
         Booking newBooking = databaseManager.addBooking(firstname, lastname, email, roomNumber, date, startTime, endTime);
 
-        if (newBooking == null)
+        if (newBooking == null) {
             succeed = false;
+        }
+
+        request.setAttribute("succeed", succeed);
+
+        HttpSession session = request.getSession();
+        boolean authorized = (boolean) session.getAttribute("authorized");
         
-        request.setAttribute("succeed",succeed);
+        if (authorized) {
+            authorized = false;
+        }
+        session.invalidate();
         
         if (succeed) {
-            
+
             request.setAttribute("roomnumber", roomNumber);
             request.setAttribute("firstname", firstname);
             request.setAttribute("lastname", lastname);
@@ -71,10 +72,9 @@ public class FormController extends HttpServlet {
             request.setAttribute("date", date.toString());
             request.setAttribute("from", startTime);
             request.setAttribute("to", endTime);
-
             request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
         } else {
-            request.setAttribute("error", "Time already taken, try again!");
+            request.setAttribute("error", "You Request is not valid, please try again!");
             request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
         }
 

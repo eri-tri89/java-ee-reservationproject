@@ -7,11 +7,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%
+Boolean authorized = (Boolean)(session.getAttribute("authorized"));
+	if(authorized == null){
+		response.sendRedirect("../index.jsp");
+	}else{
+		if(!authorized){response.sendRedirect("../index.jsp");}
+	}
+%>
 <t:main>
     <jsp:body>
-        <p style="background-color: yellow">${notAllowedMessage}</p>
         <h2>Rehearsal Rooms</h2>
-        <p>Something about the rooms, the prices and the quality of the rooms</p>
+        <p>It costs 300 SEK to play in one of our rooms... but don't worry! you pay it when you finished to play with your band. </p>
+        <p>All the rooms have the best quality for your band. You lose your booking if you come 20 minutes later
+            but you don't have to pay it, just book another one</p>
         <br/><br/><br/>        
         <div>           
             <div>
@@ -47,7 +56,7 @@
                     <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="1"/>
                         <jsp:include page="form.jsp"/>
-                        <input class="table-button" type="submit" value="Confirm booking"/>
+                        <input class="table-button" type="submit" value="Confirm booking" onmouseover="setDatePickerValue(document.getElementById('datePicker'));"/>
                     </form> 
                 </div>
             </div>

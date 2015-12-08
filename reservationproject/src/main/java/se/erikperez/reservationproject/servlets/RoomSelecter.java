@@ -6,12 +6,15 @@
 package se.erikperez.reservationproject.servlets;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import se.erikperez.reservationproject.infotier.DatabaseManager;
+import javax.servlet.http.HttpSession;
+import se.erikperez.reservationproject.datamanagement.DatabaseManager;
 import se.erikperez.reservationproject.model.Booking;
 
 /**
@@ -34,6 +37,9 @@ public class RoomSelecter extends HttpServlet {
         
         //Send lists from database to show the client the already taken times
         DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager");
+        //Deletes all the old bookings from database
+        int deletedValues = databaseManager.updateTable(new Date(Calendar.getInstance().getTime().getTime()));
+        //Create lists to show to the client
         List<Booking> roomList1 = databaseManager.getBookingListByRoomNumber(1),
                 roomList2 = databaseManager.getBookingListByRoomNumber(2),
                 roomList3 = databaseManager.getBookingListByRoomNumber(3);
@@ -41,6 +47,10 @@ public class RoomSelecter extends HttpServlet {
         this.getServletContext().log("roomlist 1 = " + roomList1.size());
         this.getServletContext().log("roomlist 2 = " + roomList2.size());
         this.getServletContext().log("roomlist 3 = " + roomList3.size());
+        this.getServletContext().log("updated values = " + deletedValues);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("authorized", new Boolean(true));
 
         request.setAttribute("roomlist1", roomList1);
         request.setAttribute("roomlist2", roomList2);

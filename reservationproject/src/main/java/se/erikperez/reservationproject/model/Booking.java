@@ -22,7 +22,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries(value ={
-    @NamedQuery(name="booking.findAllbyRoom", query="SELECT b FROM Booking b WHERE b.roomNumber = :roomNumber ORDER BY b.bookingDate ASC"),
+    @NamedQuery(name="booking.findAllbyRoom", query="SELECT b FROM Booking b WHERE b.roomNumber = :roomNumber ORDER BY b.bookingDate DESC"),
     @NamedQuery(name="booking.updateTable",query="DELETE FROM Booking b WHERE b.bookingDate < :bookingDate")
        
 })

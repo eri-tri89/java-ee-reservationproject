@@ -5,19 +5,20 @@
  */
 
 /************************************ Manipulating booking inputs *******************************/
-function setDatePickerValue(datePicker){    
-    datePicker.valueAsDate = new Date();
-    datePicker.min = datePicker.value;
+/**
+ * @param {input date} datePicker description
+ * */
+function setDatePickerValue(datePicker) {
+    if (datePicker.value == '') {
+        datePicker.valueAsDate = new Date();
+        datePicker.min = datePicker.value;
+
+    }
 }
-
-
-
 /********************************* Check Warnings **************************************/
 
-/*
- * Inputs not verified yet 02/12/2015
- * 
- * */
+
+
 
 
 

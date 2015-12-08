@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.erikperez.reservationproject.infotier;
+package se.erikperez.reservationproject.datamanagement;
 
 import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,14 +17,29 @@ import se.erikperez.reservationproject.model.Booking;
  *
  * @author Erick
  */
-public final class DatabaseManager{
+public final class DatabaseManager {
 
     private final String PERSISTENCE_UNIT_NAME = "reservationproject";
     private final EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
+    private static final String ALLOWED_CHARACTERS = "^[A-Za-z0-9]+$",
+            ALLOWED_CHARACTERS_EMAIL = "^[A-Za-z0-9\\.@]+$";
 
     public DatabaseManager() {
         entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+    }
+    
+     private boolean isStringAllowed(String requestString, boolean email){
+        if(email){
+            if(!requestString.matches(ALLOWED_CHARACTERS_EMAIL)){
+                return false;
+            }
+        }else{
+            if(!requestString.matches(ALLOWED_CHARACTERS)){
+                return false;
+            }
+        }
+        return true;
     }
 
     public List<Booking> getBookingListByRoomNumber(int roomnumber) {
@@ -42,6 +58,7 @@ public final class DatabaseManager{
     public int updateTable(Date today) {
         entityManager = entityManagerFactory.createEntityManager();
         try {
+            entityManager.getTransaction().begin();
             return entityManager.createNamedQuery("booking.updateTable").
                     setParameter("bookingDate", today).executeUpdate();
         } finally {
@@ -63,7 +80,10 @@ public final class DatabaseManager{
         }
     }
 
-    public Booking addBooking(String firstname, String lastname, String email, int roomNumber, Date bookingDate, String startTime, String endTime) throws NullPointerException {
+    public Booking addBooking(String firstname, String lastname, String email, int roomNumber, Date bookingDate, String startTime, String endTime){
+        if(!isStringAllowed(firstname,false) ||!isStringAllowed(lastname,false) ||!isStringAllowed(email,true)){
+            return null;
+        }
         Booking newBooking = (isBookingNotAble(roomNumber, bookingDate, startTime, endTime)
                 ? null
                 : newBooking(firstname, lastname, email, roomNumber, bookingDate, startTime, endTime));
@@ -76,19 +96,13 @@ public final class DatabaseManager{
         if (bookingList.isEmpty()) {
             return false;
         } else {
-            for(int i = 0; i < bookingList.size(); i++){
-                if (bookingList.get(i).getBookingDate().toString().equals(bookingDate.toString()) &&
-                        bookingList.get(i).getStartTime().equals(startTime)
+            for (int i = 0; i < bookingList.size(); i++) {
+                if (bookingList.get(i).getBookingDate().toString().equals(bookingDate.toString())
+                        && bookingList.get(i).getStartTime().equals(startTime)
                         && bookingList.get(i).getEndTime().equals(endTime)) {
                     return true;
                 }
             }
-            /*for (Booking booking : bookingList) {
-                if (booking.getBookingDate().equals(bookingDate) && booking.getStartTime().equals(startTime)
-                        && booking.getEndTime().equals(endTime)) {
-                    return true;
-                }
-            }*/
         }
 
         return false;

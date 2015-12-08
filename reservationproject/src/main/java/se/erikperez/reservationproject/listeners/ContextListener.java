@@ -5,10 +5,12 @@
  */
 package se.erikperez.reservationproject.listeners;
 
+import java.sql.Date;
+import java.util.Calendar;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import se.erikperez.reservationproject.infotier.DatabaseManager;
+import se.erikperez.reservationproject.datamanagement.DatabaseManager;
 
 /**
  *
@@ -19,6 +21,7 @@ public class ContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent event) {
         ServletContext context = (ServletContext) event.getServletContext();
+        context.log("Today's date: " + new Date(Calendar.getInstance().getTime().getTime()).toString());
         DatabaseManager databaseManager = (DatabaseManager) context.getAttribute("databaseManager");
         if (databaseManager == null) {
             synchronized (context) {
@@ -32,15 +35,7 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent event) {
-       /* ServletContext context = (ServletContext) event.getServletContext();
-        synchronized (context) {
-            DatabaseManager databaseManager = (DatabaseManager) context.getAttribute("databaseManager");
-            if (databaseManager != null) {
-                databaseManager = null;
-                context.log("--- DatabaseManager destroyed ---");
-            }
-
-        }*/
+        event.getServletContext().log("--- contextDestroyed called ---");
     }
 
 }
