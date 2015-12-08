@@ -5,7 +5,6 @@
  */
 package se.erikperez.reservationproject.listeners;
 
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -19,22 +18,29 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
-        ServletContext context = (ServletContext)event.getServletContext();
-        synchronized (context) {
-            DatabaseManager databaseManager = new DatabaseManager();            
-            context.setAttribute("databaseManager", databaseManager);
-            context.log("--- DatabaseManager initialized ---");
+        ServletContext context = (ServletContext) event.getServletContext();
+        DatabaseManager databaseManager = (DatabaseManager) context.getAttribute("databaseManager");
+        if (databaseManager == null) {
+            synchronized (context) {
+                databaseManager = new DatabaseManager();
+                context.setAttribute("databaseManager", databaseManager);
+                context.log("--- DatabaseManager initialized ---");
+            }
         }
+
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent event) {
-        ServletContext context = (ServletContext)event.getServletContext();
+       /* ServletContext context = (ServletContext) event.getServletContext();
         synchronized (context) {
             DatabaseManager databaseManager = (DatabaseManager) context.getAttribute("databaseManager");
-            databaseManager = null;
-            context.log("--- DatabaseManager destroyed ---");
-        }
+            if (databaseManager != null) {
+                databaseManager = null;
+                context.log("--- DatabaseManager destroyed ---");
+            }
+
+        }*/
     }
 
 }
