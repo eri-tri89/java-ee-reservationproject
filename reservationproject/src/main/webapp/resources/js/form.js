@@ -1,12 +1,14 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+/** 
+ * all the js functions done in the forms
+ * @author Erik Perez
+ * @version 1.0
  */
 
-/************************************ Manipulating booking inputs *******************************/
+
 /**
- * @param {input date} datePicker description
+ * This function gives the current date to the input date, and also sets it as a minimum
+ * @param {input date} datePicker the date input to be affected
  * */
 function setDatePickerValue(datePicker) {
     if (datePicker.value == '') {
@@ -15,7 +17,6 @@ function setDatePickerValue(datePicker) {
 
     }
 }
-/********************************* Check Warnings **************************************/
 
 
 

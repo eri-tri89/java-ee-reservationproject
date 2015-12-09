@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package se.erikperez.reservationproject.model;
-
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -17,39 +11,42 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
+ * The persistent class for the BOOKING database table.
  *
- * @author Erick
+ * @author Erik Perez
+ * @version 1.0
+ * @since 09/12/2015
  */
 @Entity
-@NamedQueries(value ={
-    @NamedQuery(name="booking.findAllbyRoom", query="SELECT b FROM Booking b WHERE b.roomNumber = :roomNumber ORDER BY b.bookingDate DESC"),
-    @NamedQuery(name="booking.updateTable",query="DELETE FROM Booking b WHERE b.bookingDate < :bookingDate")
-       
+@NamedQueries(value = {
+    @NamedQuery(name = "booking.findAllbyRoom", query = "SELECT b FROM Booking b WHERE b.roomNumber = :roomNumber ORDER BY b.bookingDate DESC"),
+    @NamedQuery(name = "booking.updateTable", query = "DELETE FROM Booking b WHERE b.bookingDate < :today")
+
 })
-public class Booking implements Serializable{
-    
+public class Booking implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @Column(nullable = false)
     private String firstname;
-    
+
     @Column(nullable = false)
     private String lastname;
-    
+
     @Column(nullable = false)
     private String email;
-    
+
     @Column
     private int roomNumber;
-    
+
     @Column
     private Date bookingDate;
-    
+
     @Column
     private String startTime;
-    
+
     @Column
     private String endTime;
 
@@ -81,7 +78,7 @@ public class Booking implements Serializable{
         this.startTime = startTime;
         this.endTime = endTime;
     }
-    
+
     public String getFirstname() {
         return firstname;
     }
@@ -113,7 +110,7 @@ public class Booking implements Serializable{
     public void setRoomNumber(int roomNumber) {
         this.roomNumber = roomNumber;
     }
-    
+
     public Date getBookingDate() {
         return bookingDate;
     }
@@ -154,5 +151,5 @@ public class Booking implements Serializable{
     public String toString() {
         return "se.erikperez.reservationproject.model.Booking[ id=" + id + " ]";
     }
-    
+
 }

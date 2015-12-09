@@ -1,7 +1,8 @@
 <%-- 
-    Document   : thanks
+    Document   : result
+    Description: The look of the result page, according to the answer of the FormController servlet
     Created on : 02-Dec-2015, 19:07:38
-    Author     : Erick
+    Author     : Erik Perez
 --%>
 
 
@@ -12,6 +13,7 @@
     <jsp:body>
         <c:choose>
             <c:when test="${succeed}">
+                <!-- Booking suceeded! -->
                 <h2>Thanks for the booking</h2>
                 <img src="http://25.media.tumblr.com/tumblr_m2gph3GavN1qzamioo1_500.jpg" alt="success_image" class="img_room"/>
                 <div class="result-grid"><table>
@@ -27,6 +29,7 @@
                         <p>If you miss the booking... it's ok, you can book another time and play</p>
             </c:when>
             <c:otherwise>
+                <!-- Booking failed! -->
                 <h2>${error}</h2>
                 <br/><br/><br/>
                 <img src="http://previews.123rf.com/images/aquir/aquir1311/aquir131100094/23420980-Failed-red-grunge-stamp-Stock-Photo.jpg" alt="failed_image" class="img_room"/>

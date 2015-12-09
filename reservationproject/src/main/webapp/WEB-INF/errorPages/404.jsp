@@ -1,7 +1,8 @@
 <%-- 
     Document   : 404
+    Description: showed at error 404
     Created on : 02-Dec-2015, 19:29:02
-    Author     : Erick
+    Author     : Erik Perez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

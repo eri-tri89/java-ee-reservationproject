@@ -1,8 +1,7 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    This file handles the appearance of the center of the sites
 */
+
 /* 
     Created on : 27-Nov-2015, 15:14:44
     Author     : Erick
@@ -212,7 +211,6 @@ div.datagrid-container{
     -moz-box-shadow: inset -19px -20px 27px -17px rgba(0,0,0,1);
     box-shadow: inset -19px -20px 27px -17px rgba(0,0,0,1);
     font-weight:normal;
-    font-variant:small-caps;
     color:#000000;
     border: 1px solid; 
     letter-spacing:1pt;
@@ -224,6 +222,7 @@ div.datagrid-container{
 }
 
 /********************************************Result Grid*****************************************/
+
 .result-grid table { border-collapse: collapse; text-align: left; width: 100%; } 
 .result-grid {
     width: 70%;

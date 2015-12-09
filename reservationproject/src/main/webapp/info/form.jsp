@@ -1,7 +1,8 @@
 <%-- 
     Document   : form
+    Description: general structure of the form
     Created on : 27-Nov-2015, 16:03:32
-    Author     : Erick
+    Author     : Erik Perez
 --%>
 
 

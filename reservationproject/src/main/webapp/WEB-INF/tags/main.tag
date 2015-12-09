@@ -1,7 +1,8 @@
 <%-- 
-    Document   : base
+    Document   : main
+    Description: The main structure of the site
     Created on : 27-Nov-2015, 15:27:48
-    Author     : Erick
+    Author     : Erik Perez
 --%>
 
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>

@@ -1,7 +1,8 @@
 <%-- 
     Document   : rooms
+    Description: The structure of the room site
     Created on : 27-Nov-2015, 16:16:56
-    Author     : Erick
+    Author     : EriK Perez
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -58,7 +59,7 @@ Boolean authorized = (Boolean)(session.getAttribute("authorized"));
                     <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="1"/>
                         <jsp:include page="form.jsp"/>
-                        <input class="table-button" type="submit" value="Confirm booking" onmouseover="setDatePickerValue(document.getElementById('datePicker'));"/>
+                        <input class="table-button" type="submit" value="Confirm booking"  onmouseover="setDatePickerValue(document.getElementById('datePicker'));"/>
                     </form> 
                 </div>
             </div>
@@ -97,7 +98,7 @@ Boolean authorized = (Boolean)(session.getAttribute("authorized"));
                     <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="2"/>
                         <jsp:include page="form.jsp"/>
-                        <input class="table-button" type="submit" value="Confirm booking"/>
+                        <input class="table-button" type="submit"  value="Confirm booking" onmouseover="setDatePickerValue(document.getElementById('datePicker'));"/>
                     </form>
                 </div>
             </div>
@@ -136,7 +137,7 @@ Boolean authorized = (Boolean)(session.getAttribute("authorized"));
                     <form action="FormController" method="post">
                         <input type="hidden" name="roomnumber" value="3"/>
                         <jsp:include page="form.jsp"/>
-                        <input class="table-button" type="submit" value="Confirm booking"/>
+                        <input class="table-button" type="submit" value="Confirm booking" onmouseover="setDatePickerValue(document.getElementById('datePicker'));"/>
                     </form>
                 </div>
             </div>

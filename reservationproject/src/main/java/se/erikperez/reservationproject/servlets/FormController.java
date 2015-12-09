@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package se.erikperez.reservationproject.servlets;
 
 import java.io.IOException;
@@ -17,8 +12,12 @@ import se.erikperez.reservationproject.datamanagement.DatabaseManager;
 import se.erikperez.reservationproject.model.Booking;
 
 /**
- *
- * @author Erick
+ * This class manages the request that comes from the forms done in the site
+ * to book a room to play
+ * @see HttpServlet
+ * @author Erik Perez
+ * @version 1.0
+ * @since 09/12/2015
  */
 @WebServlet(name = "FormController", urlPatterns = {"/FormController"})
 public class FormController extends HttpServlet {
@@ -34,8 +33,9 @@ public class FormController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //boolean that evaluates which response the client will have
         boolean succeed = true;
-
+         //The requests from the client
         int roomNumber = Integer.parseInt(request.getParameter("roomnumber"));
         String firstname = request.getParameter("firstname"),
                 lastname = request.getParameter("lastname"),
@@ -45,7 +45,8 @@ public class FormController extends HttpServlet {
         String[] moment = request.getParameter("select").split("-");
         String startTime = moment[0],
                 endTime = moment[1];
-
+        
+        //Database handling
         DatabaseManager databaseManager = (DatabaseManager) this.getServletContext().getAttribute("databaseManager");
         Booking newBooking = databaseManager.addBooking(firstname, lastname, email, roomNumber, date, startTime, endTime);
 
@@ -54,17 +55,19 @@ public class FormController extends HttpServlet {
         }
 
         request.setAttribute("succeed", succeed);
-
+        
+        //Managing the session of the client
         HttpSession session = request.getSession();
         boolean authorized = (boolean) session.getAttribute("authorized");
-        
+
         if (authorized) {
             authorized = false;
         }
+        //invalidate after the request is evaluated
         session.invalidate();
-        
-        if (succeed) {
 
+        if (succeed) {
+            //if the booking successfully handles and stores in database
             request.setAttribute("roomnumber", roomNumber);
             request.setAttribute("firstname", firstname);
             request.setAttribute("lastname", lastname);
@@ -74,6 +77,7 @@ public class FormController extends HttpServlet {
             request.setAttribute("to", endTime);
             request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
         } else {
+            //if the booking fails
             request.setAttribute("error", "You Request is not valid, please try again!");
             request.getRequestDispatcher("confirmation/result.jsp").forward(request, response);
         }

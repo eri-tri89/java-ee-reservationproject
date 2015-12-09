@@ -1,7 +1,8 @@
 <%-- 
     Document   : failed
+    Description: Showed when something failed internally in the site
     Created on : 02-Dec-2015, 19:29:29
-    Author     : Erick
+    Author     : Erik Perez
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

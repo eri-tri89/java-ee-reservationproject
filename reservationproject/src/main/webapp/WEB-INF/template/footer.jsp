@@ -1,5 +1,6 @@
 <%-- 
     Document   : footer
+    Description: The look of the site's footer
     Created on : 27-Nov-2015, 15:00:07
     Author     : Erick
 --%>
@@ -13,11 +14,8 @@
             </tr>
         </table>
     </div>
-    <div class="icons-container" id="icons-container" align="center"><!-- onmouseout="showBlank();"-->
+    <div class="icons-container" id="icons-container" align="center">
         <p id="mail">Contact me</p>
-        <a href="https://www.facebook.com/erik.j.triana" target="_blank">
-            <img src="${pageContext.request.contextPath}/images/icons/fb_icon.png" alt="facebook icon" class="icon" onmouseover="showFB();"/>
-        </a>
         <a href="https://twitter.com/eritri89" target="_blank">
             <img src="${pageContext.request.contextPath}/images/icons/twitter_icon.png" alt="twitter icon" class="icon" onmouseover="showTwitter();"/>
         </a>    
